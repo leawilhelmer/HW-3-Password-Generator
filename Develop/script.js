@@ -19,7 +19,10 @@ var nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var sChars = ["!", "@", "*", "$", "+"]
 var emojis = ["😃", "😊", "😂", "👍"]
 
-var length = parseInt(prompt("How long does this password need to be?"))
+function generate() {
+  var possibles = []
+
+  var length = parseInt(prompt("How long does this password need to be?"))
 
 if (length < 8 || length > 128 || isNaN(length)) {
   alert("Password invalid, refresh the page")
@@ -38,9 +41,17 @@ if (length < 8 || length > 128 || isNaN(length)) {
 
   var pw = ""
 
-  for (let i = 0; i < possibles.length; i++) {
-    let rand = Math.floor(Math.random() * possibles[i].length)
+  while (pw.length < length) {
 
+    for (let i = 0; i < possibles.length; i++) {
+      let rand = Math.floor(Math.random() * possibles[i].length)
+      pw += possibles[i][rand]
+    }
   }
 }
+console.log(pw, `password length : ${pw.length}`)
+}
 
+document.querySelector("#generate").addEventListener("click", generate)
+
+console.log("")
