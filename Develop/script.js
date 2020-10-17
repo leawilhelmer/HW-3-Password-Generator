@@ -19,6 +19,7 @@ var nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var sChars = ["!", "@", "*", "$", "+"]
 var emojis = ["😃", "😊", "😂", "👍"]
 
+var pwArea = document.querySelector("#password")
 function generate() {
   var possibles = []
 
@@ -50,8 +51,10 @@ if (length < 8 || length > 128 || isNaN(length)) {
   }
 }
 console.log(pw, `password length : ${pw.length}`)
+pwArea.textContent = pw
 }
 
 document.querySelector("#generate").addEventListener("click", generate)
 
-console.log("")
+console.log("😂".length)
+console.log("👍".length)
