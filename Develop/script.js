@@ -32,7 +32,6 @@ if (length < 8 || length > 128 || isNaN(length)) {
   var numsTrue = confirm("Do you want nums?")
   var sCharsTrue = confirm("Do you want sChars?")
   var emojisTrue = confirm("Do you want emojis?")
-
   var possibles = []
 
   if (charsTrue) { possibles.push(chars) }
